@@ -1,46 +1,124 @@
-html,
 body {
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131c21;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 #chat {
-  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
 }
 
 input {
-  width: 600px;
-  border: 1px solid #ddd;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
   height: 50px;
   padding: 0 20px;
   font-size: 14px;
+  background: #2a2f32;
+  color: #fff;
+}
+
+input:disabled {
+  background: #d3d3d3;
+  color: #5c5c5c;
 }
 
 button {
-  width: 600px;
+  width: 100%;
   height: 50px;
   font-size: 14px;
-  background: #069;
+  background: #25d366;
+  border: 0;
+  border-radius: 5px;
   text-align: center;
-  line-height: 50px;
   font-weight: bold;
   color: #fff;
-  margin-top: 10px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .messages {
-  width: 600px;
+  width: 100%;
   height: 400px;
   margin: 20px 0;
-  border: 1px solid #ddd;
+  border: 0;
+  border-radius: 5px;
   padding: 20px;
+  background: url("./images/whats-backgound.jpg") no-repeat;
+  background-size: cover;
+  overflow-y: auto;
+}
+
+.messages::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+
+.messages::-webkit-scrollbar {
+  width: 10px;
+  background-color: #eee;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #2a2f32;
+  border: 0;
+}
+
+.message-box {
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.message-box-left {
+  background-color: #484e51;
+  border-radius: 0 5px 5px 5px;
+}
+
+.message-box-right {
+  background-color: #056162;
+  border-radius: 5px 0px 5px 5px;
+}
+
+.arrow-left {
+  width: 0px;
+  height: 0px;
+  border-bottom: 13px solid transparent;
+  border-right: 13px solid #484e51;
+  border-radius: 5px 0 0 0;
+  position: absolute;
+  margin-left: -23px;
+  margin-top: -10px;
+}
+
+.arrow-right {
+  width: 0px;
+  height: 0px;
+  border-bottom: 13px solid transparent;
+  border-left: 13px solid #056162;
+  border-radius: 0 5px 0 0;
+  position: absolute;
+  left: 100%;
+  margin-top: -10px;
+}
+
+.author {
+  color: #3bdec3;
+}
+
+.message {
+  color: #f1f1f2f2;
 }
